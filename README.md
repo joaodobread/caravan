@@ -6,7 +6,9 @@
 
 ## Description
 
-Repository to put into practice some things regarding code separation, NestJS and GraphQL
+Repository to put into practice some things regarding code separation, NestJS and GraphQL;
+
+This maybe can be used as a boilerplate for new project
 
 ## Requirements
 

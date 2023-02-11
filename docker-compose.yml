@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  caravan_database:
+    image: postgres
+    container_name: caravan_database
+    environment:
+      - POSTGRES_USER=caravan
+      - POSTGRES_PASSWORD=caravan
+      - POSTGRES_DB=caravan_database
+    ports:
+      - 5432:5432
+    volumes:
+      - ./.docker/pgdata:/var/lib/postgresql
+
+  caravan_database_test:
+    image: postgres
+    container_name: caravan_database_test
+    environment:
+      - POSTGRES_USER=caravan
+      - POSTGRES_PASSWORD=caravan
+      - POSTGRES_DB=caravan_database_test
+    command: "postgres -c 'shared_buffers=128MB' -c 'fsync=off' -c 'synchronous_commit=off' -c 'full_page_writes=off' -c 'max_connections=100' -c 'client_min_messages=warning'"
+    tmpfs:
+      - /var/lib/postgresql
+    ports:
+      - 5431:5432
