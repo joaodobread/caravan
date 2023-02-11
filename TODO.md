@@ -72,11 +72,7 @@
 
 - [ ] Performance Tracker
 
-- [ ] Cache
-
-- Http Level
-- Method Level
-- Database Level
+- [ ] Cache (Http Level - Method Level - Database Level)
 
 ---
 
